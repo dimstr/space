@@ -1,0 +1,44 @@
+[
+  {
+    "name": "Меркурий",
+    "description": "Горячо",
+    "image": "/images/mercury.png",
+    "url": ""
+  },
+  {
+    "name": "Венера",
+    "description": "Горячо",
+    "image": "/images/venus.png",
+    "url": ""
+  },
+  {
+    "name": "Земля",
+    "description": "Горячо",
+    "image": "/images/earth.png",
+    "url": ""
+  },
+  {
+    "name": "Марс",
+    "description": "Холодна",
+    "image": "/images/mars.png",
+    "url": ""
+  },
+  {
+    "name": "Юпитер",
+    "description": "Холодна",
+    "image": "/images/jupiter.png",
+    "url": ""
+  },
+  {
+    "name": "Сатурн",
+    "description": "Холодна",
+    "image": "/images/saturn.png",
+    "url": ""
+  },
+  {
+    "name": "Уран",
+    "description": "Холодна",
+    "image": "/images/uranus.png",
+    "url": ""
+  }
+]
