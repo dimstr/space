@@ -2,7 +2,7 @@
   {
     "name": "Меркурий",
     "description": "Горячо",
-    "image": "/images/mercury.jpg",
+    "image": "assets/images/mercury.jpg",
     "url": ""
   },
   {
@@ -14,7 +14,7 @@
   {
     "name": "Земля",
     "description": "Горячо",
-    "image": "/assets/images/earth.jpg",
+    "image": "assets/images/earth.jpg",
     "url": ""
   },
   {
@@ -26,25 +26,25 @@
   {
     "name": "Юпитер",
     "description": "Холодна",
-    "image": "/assets/assets/images/jupiter.jpg",
+    "image": "assets/images/jupiter.jpg",
     "url": ""
   },
   {
     "name": "Сатурн",
     "description": "Холодна",
-    "image": "images/saturn.png",
+    "image": "assets/images/saturn.png",
     "url": ""
   },
   {
     "name": "Уран",
     "description": "Холодна",
-    "image": "images/uranus.jpg",
+    "image": "assets/images/uranus.jpg",
     "url": ""
   },
   {
     "name": "Нептун",
     "description": "Холодна",
-    "image": "images/neptune.jpg",
+    "image": "assets/images/neptune.jpg",
     "url": ""
   }
 ]
