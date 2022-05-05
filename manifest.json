@@ -1,11 +1,11 @@
 {
-    "name": "space_news",
-    "short_name": "space_news",
+    "name": "space_vestnik",
+    "short_name": "space_vestnik",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "Space news",
+    "description": "A new Flutter project.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
