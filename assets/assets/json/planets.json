@@ -2,31 +2,31 @@
   {
     "name": "Меркурий",
     "description": "Горячо",
-    "image": "images/mercury.jpg",
+    "image": "/images/mercury.jpg",
     "url": ""
   },
   {
     "name": "Венера",
     "description": "Горячо",
-    "image": "images/venus.png",
+    "image": "assets/images/venus.png",
     "url": ""
   },
   {
     "name": "Земля",
     "description": "Горячо",
-    "image": "images/earth.jpg",
+    "image": "/assets/images/earth.jpg",
     "url": ""
   },
   {
     "name": "Марс",
     "description": "Холодна",
-    "image": "images/mars.png",
+    "image": "assets/assets/images/mars.png",
     "url": ""
   },
   {
     "name": "Юпитер",
     "description": "Холодна",
-    "image": "images/jupiter.jpg",
+    "image": "/assets/assets/images/jupiter.jpg",
     "url": ""
   },
   {
