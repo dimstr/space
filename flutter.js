@@ -2,7 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-// https://developers.google.com/web/fundamentals/primers/service-workers
+/**
+ * This script installs service_worker.js to provide PWA functionality to
+ *     application. For more information, see:
+ *     https://developers.google.com/web/fundamentals/primers/service-workers
+ */
 
 if (!_flutter) {
   var _flutter = {};
@@ -12,10 +16,21 @@ _flutter.loader = null;
 (function() {
   "use strict";
   class FlutterLoader {
+    // TODO: Move the below methods to "#private" once supported by all the browsers
+    // we support. In the meantime, we use the "revealing module" pattern.
+
+    // Watchdog to prevent injecting the main entrypoint multiple times.
     _scriptLoaded = null;
 
+    // Resolver for the pending promise returned by loadEntrypoint.
     _didCreateEngineInitializerResolve = null;
 
+    /**
+     * Initializes the main.dart.js with/without serviceWorker.
+     * @param {*} options
+     * @returns a Promise that will eventually resolve with an EngineInitializer,
+     * or will be rejected with the error caused by the loader.
+     */
     loadEntrypoint(options) {
       const {
         entrypointUrl = "main.dart.js",
@@ -24,11 +39,18 @@ _flutter.loader = null;
       return this._loadWithServiceWorker(entrypointUrl, serviceWorker);
     }
 
+    /**
+     * Resolves the promise created by loadEntrypoint. Called by Flutter.
+     * Needs to be weirdly bound like it is, so "this" is preserved across
+     * the JS <-> Flutter jumps.
+     * @param {*} engineInitializer
+     */
     didCreateEngineInitializer = (function(engineInitializer) {
       if (typeof this._didCreateEngineInitializerResolve != "function") {
         console.warn("Do not call didCreateEngineInitializer by hand. Start with loadEntrypoint instead.");
       }
       this._didCreateEngineInitializerResolve(engineInitializer);
+      // Remove this method after it's done, so Flutter Web can hot restart.
       delete this.didCreateEngineInitializer;
     }).bind(this);
 
@@ -81,9 +103,13 @@ _flutter.loader = null;
       let loader = navigator.serviceWorker.register(serviceWorkerUrl)
           .then((reg) => {
             if (!reg.active && (reg.installing || reg.waiting)) {
+              // No active web worker and we have installed or are installing
+              // one for the first time. Simply wait for it to activate.
               let sw = reg.installing || reg.waiting;
               return this._waitForServiceWorkerActivation(sw, entrypointUrl);
             } else if (!reg.active.scriptURL.endsWith(serviceWorkerVersion)) {
+              // When the app updates the serviceWorkerVersion changes, so we
+              // need to ask the service worker to update.
               console.debug("New service worker available.");
               return reg.update().then((reg) => {
                 console.debug("Service worker updated.");
@@ -91,11 +117,13 @@ _flutter.loader = null;
                 return this._waitForServiceWorkerActivation(sw, entrypointUrl);
               });
             } else {
+              // Existing service worker is still good.
               console.debug("Loading app from service worker.");
               return this._loadEntrypoint(entrypointUrl);
             }
           });
 
+      // Timeout race promise
       let timeout;
       if (timeoutMillis > 0) {
         timeout = new Promise((resolve, _) => {

@@ -12,7 +12,7 @@ const RESOURCES = {
 "assets/assets/images/saturn.png": "000d6b162e62b2151daec66b576c2e72",
 "assets/assets/images/uranus.jpg": "bf3e0e094ab37660be25da08a4426f1c",
 "assets/assets/images/venus.png": "a2551a9a15190d1f0b8d9bb3cfa469c3",
-"assets/assets/json/planets.json": "fa3fe82a678b1683bb63dcdc8e3a5b0e",
+"assets/assets/json/planets.json": "5dee7988e00c83f80370f64442857151",
 "assets/FontManifest.json": "7b2a36307916a9721811788013e65289",
 "assets/fonts/MaterialIcons-Regular.otf": "95db9098c58fd6db106f1116bae85a0b",
 "assets/NOTICES": "063cf5d033e4cf73bb7096a021b0a27e",
@@ -26,9 +26,9 @@ const RESOURCES = {
 "icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
 "icons/Icon-maskable-192.png": "c457ef57daa1d16f64b27b786ec2ea3c",
 "icons/Icon-maskable-512.png": "301a7604d45b3e739efc881eb04896ea",
-"index.html": "c15bced251dada01f61013bfb4368ea4",
-"/": "c15bced251dada01f61013bfb4368ea4",
-"main.dart.js": "91a2d554a52a43ffbe9c4ef907e6dad0",
+"index.html": "bb711558c8d953f8073a328f0b836eec",
+"/": "bb711558c8d953f8073a328f0b836eec",
+"main.dart.js": "97f313df8b1fd39dd3dfaa58c3deff52",
 "manifest.json": "2ffbf35b0de3481504fdd46c95a53fdb",
 "version.json": "5b2eb9a1c169949d4769f93f811a564d"
 };
