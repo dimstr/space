@@ -1,6 +1,6 @@
 {
-    "name": "space_vestnik",
-    "short_name": "space_vestnik",
+    "name": "space_herald",
+    "short_name": "space_herald",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
